@@ -6,7 +6,7 @@ import PicoPlaca from '../PicoPlaca/PicoPlaca'
 export default interface Plate {
   identifier: string
   lastDigit: number
-  restriction: PicoPlaca
+  restriction?: PicoPlaca
 }
 
 // Format ABC1234 or ABC123
@@ -20,12 +20,12 @@ export function ensureValidPlate (plate: Plate) {
 }
 
 // Obtain the last digit of the plate
-export function getLastDigit (plate: Plate) {
-  const lastStringDigit = plate.identifier[plate.identifier.length - 1]
+export function getLastDigit (identifier: string) {
+  const lastStringDigit = identifier[identifier.length - 1]
 
   if (!isNaN(Number(lastStringDigit))) return Number(lastStringDigit)
 
-  const secondLastDigit = plate.identifier[plate.identifier.length - 2]
+  const secondLastDigit = identifier[identifier.length - 2]
   if (isNaN(Number(secondLastDigit))) throw new Error('Plate last digit is not valid')
   return Number(secondLastDigit)
 }
