@@ -1,6 +1,7 @@
+import { PicoPlacaDayRestrictions } from "./PicoPlacaDayRestrictions"
 import Time from "./Time"
 
 export default interface PicoPlaca {
-    days: Date[]
+    days: PicoPlacaDayRestrictions
     time: Time[]
 }
