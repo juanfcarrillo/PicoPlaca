@@ -1,6 +1,6 @@
 import { PicoPlacaDays } from './PicoPlacaDays'
 import { afternoonRestrinction, mornignRestrinction } from './PicoPlacaTimeConstants'
-import Time from './Time'
+import Time from '../shared/DateTime/Time'
 
 export default interface PicoPlaca {
   days: PicoPlacaDays

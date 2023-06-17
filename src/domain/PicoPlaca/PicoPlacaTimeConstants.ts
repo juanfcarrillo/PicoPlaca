@@ -1,4 +1,4 @@
-import Time from './Time'
+import Time from '../shared/DateTime/Time'
 
 export const mornignRestrinction: Time = {
   from: '07:00am',
