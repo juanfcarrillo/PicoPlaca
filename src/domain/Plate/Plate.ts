@@ -34,7 +34,7 @@ export function getLastDigit (identifier: string) {
 
 // Ensure the rules of the identifier
 // Format ABC1234 or ABC123
-export function ensureFormatValidPlate (identifier: string) {
+function ensureFormatValidPlate (identifier: string) {
   const carRegex = /^[A-Z]{3}[0-9]{3,4}$/
   const bikeRegex = /^[A-Z]{2}[0-9]{3}[A-Z]$/
 

@@ -1,11 +1,11 @@
-import Time from '../shared/DateTime/Time'
+import PicoPlacaTime from './PicoPlacaTime'
 
-export const mornignRestrinction: Time = {
-  from: '07:00am',
-  to: '9:30am'
+export const mornignRestrinction: PicoPlacaTime = {
+  from: { time: '07:00', period: 'am' },
+  to: { time: '9:30', period: 'am' }
 }
 
-export const afternoonRestrinction: Time = {
-  from: '4:00pm',
-  to: '7:30pm'
+export const afternoonRestrinction: PicoPlacaTime = {
+  from: { time: '4:00', period: 'pm' },
+  to: { time: '7:30pm', period: 'pm' }
 }

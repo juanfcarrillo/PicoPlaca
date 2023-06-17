@@ -1,10 +1,10 @@
 import { PicoPlacaDays } from './PicoPlacaDays'
 import { afternoonRestrinction, mornignRestrinction } from './PicoPlacaTimeConstants'
-import Time from '../shared/DateTime/Time'
+import PicoPlacaTime from './PicoPlacaTime'
 
 export default interface PicoPlaca {
   days: PicoPlacaDays
-  time: Time[]
+  time: PicoPlacaTime[]
 }
 
 export function getPicoPlacaRestriction (lastDigit: number): PicoPlaca {
@@ -14,6 +14,7 @@ export function getPicoPlacaRestriction (lastDigit: number): PicoPlaca {
   }
 }
 
+// Returns the day of the restriction
 function getPicoPlacaDay (lastDigit: number): PicoPlacaDays {
   if (lastDigit === 1 || lastDigit === 2) return PicoPlacaDays.Mon
   if (lastDigit === 3 || lastDigit === 4) return PicoPlacaDays.Tue

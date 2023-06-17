@@ -5,7 +5,7 @@ export function ensureValidDate (date: NDate) {
   ensureFormatValidDate(date)
 }
 
-// format: dd/mm/yyyy
+// format: mm/dd/yyyy
 function ensureFormatValidDate (date: string) {
   const dateReg = /^\d{2}\/\d{2}\/\d{4}$/
   if (!dateReg.test(date)) throw new Error('Date format is invalid')

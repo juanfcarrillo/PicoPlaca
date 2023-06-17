@@ -1,22 +1,13 @@
 export default interface Time {
-  from: string
-  to: string
-}
-
-// from: The time from
-// to: The time to
-// Format hh:mm (am/pm)
-export function ensureValidTime (time: Time) {
-  if (time.from === '') throw new Error('Time from is required')
-  if (time.to === '') throw new Error('Time to is required')
-
-  ensureFormatValidTime(time.from)
-  ensureFormatValidTime(time.to)
+  time: string
+  period: string
 }
 
 // Ensure the rules of the time
 // Format hh:mm (am/pm)
-function ensureFormatValidTime (time: string) {
-  const regex = /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/
-  if (!regex.test(time)) throw new Error('Time from is not valid')
+export function ensureValidTime (time: Time) {
+  const timeRegex = /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/
+  const periodRegex = /^am|pm$/
+  if (!timeRegex.test(time.time)) throw new Error('Time is not valid')
+  if (!periodRegex.test(time.period)) throw new Error('Time period is not valid')
 }
