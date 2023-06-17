@@ -26,20 +26,24 @@ export function getLastDigit (identifier: string) {
   if (!isNaN(Number(lastStringDigit))) return Number(lastStringDigit)
 
   const secondLastDigit = identifier[identifier.length - 2]
+
   if (isNaN(Number(secondLastDigit))) throw new Error('Plate last digit is not valid')
+
   return Number(secondLastDigit)
 }
 
 // Ensure the rules of the identifier
 // Format ABC1234 or ABC123
 export function ensureFormatValidPlate (identifier: string) {
-  const regex = /^[A-Z]{3}[0-9]{3,4}$/
-  if (!regex.test(identifier)) throw new Error('Plate identifier is not valid')
+  const carRegex = /^[A-Z]{3}[0-9]{3,4}$/
+  const bikeRegex = /^[A-Z]{2}[0-9]{3}[A-Z]$/
+
+  if (!carRegex.test(identifier) && !bikeRegex.test(identifier)) throw new Error('Plate identifier is not valid')
 }
 
 // Ensure the rules of the last digit
 // Last digit must be a number
 function ensureFormatValidLastDigit (lastDigit: number) {
   if (lastDigit < 0 || lastDigit > 9) throw new Error('Plate last digit is not valid')
-  if (typeof lastDigit !== 'string') throw new Error('Plate last digit is not valid')
+  if (typeof lastDigit !== 'number') throw new Error('Plate last digit is not valid')
 }
