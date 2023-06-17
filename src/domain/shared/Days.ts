@@ -1,4 +1,4 @@
-export enum PicoPlacaDays {
+export enum Days {
   Mon = 'Lunes',
   Tue = 'Martes',
   Wed = 'Miercoles',

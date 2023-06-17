@@ -1,6 +1,6 @@
 export default interface Time {
   time: string
-  period: string
+  period: 'am' | 'pm'
 }
 
 // Ensure the rules of the time

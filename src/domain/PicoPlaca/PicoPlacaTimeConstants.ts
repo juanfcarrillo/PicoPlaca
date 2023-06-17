@@ -7,5 +7,5 @@ export const mornignRestrinction: PicoPlacaTime = {
 
 export const afternoonRestrinction: PicoPlacaTime = {
   from: { time: '4:00', period: 'pm' },
-  to: { time: '7:30pm', period: 'pm' }
+  to: { time: '7:30', period: 'pm' }
 }
