@@ -15,7 +15,14 @@
 
 ## About The Project
 
+The entire app
 ![Pico Y Placa](docs/assets/empty-app.png)
+
+If the plate has restriction
+![Restriction](docs/assets/restriction.png)
+
+If the plate if free to go
+![Restriction](docs/assets/without-restriction.png)
 
 The project is made to predict the traffic restrictions in Quito
 
@@ -32,6 +39,8 @@ Days based Restrictions:
 ### Built With
 
 - ![React](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-- ![Vite](https://img.shields.io/badge/vite-646cff?style=for-the-badge)
+- ![Vite](https://img.shields.io/badge/vite-646cff?style=for-the-badge&logo=standardjs&logoColor=white)
 - ![Standard](https://img.shields.io/badge/standard-f3df49?style=for-the-badge&logo=standardjs&logoColor=white)
 - ![MUI](https://img.shields.io/badge/tailwindcss-06b6d4?style=for-the-badge&logo=standardjs&logoColor=white)
+
+## Hope you like it ❤️
