@@ -20,7 +20,7 @@ const PlateForm: React.FC<PlateFormProps> = () => {
 
   const setPlate = useStorePlate(store => store.setPlate)
 
-  function getPlateRestricion (e: any) {
+  function getPlateRestricion (e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
 
     const plateLastDigit = getLastDigit(plateIdentifier)
@@ -53,8 +53,8 @@ const PlateForm: React.FC<PlateFormProps> = () => {
       <RestrictionDialog open={openDialog} onClose={() => setOpenDialog(false)} hasRestriction={restriction} />
       <DatePicker label='Fecha a circular' value={date} onChange={setDate} />
       <TimePicker label='Hora a circular' value={time} onChange={setTime} />
-      <TextField label='Placa' placeholder='JD834G' value={plateIdentifier} onInput={(e: React.ChangeEvent<HTMLInputElement>) => setPlateIdentifier(e.target.value.toUpperCase())} />
-      <Button variant='contained' type='submit'>Ver restricción</Button>
+      <TextField label='Placa' placeholder='JD-834G' value={plateIdentifier} onInput={(e: React.ChangeEvent<HTMLInputElement>) => setPlateIdentifier(e.target.value.toUpperCase())} />
+      <Button variant='contained' type='submit' size='small'>Ver restricción</Button>
     </form>
   )
 }

@@ -15,7 +15,7 @@ export function getPicoPlacaRestriction (lastDigit: number): PicoPlaca {
 }
 
 // Returns the day of the restriction
-function getPicoPlacaDay (lastDigit: number): Days {
+export function getPicoPlacaDay (lastDigit: number): Days {
   if (lastDigit === 1 || lastDigit === 2) return Days.Mon
   if (lastDigit === 3 || lastDigit === 4) return Days.Tue
   if (lastDigit === 5 || lastDigit === 6) return Days.Wed
