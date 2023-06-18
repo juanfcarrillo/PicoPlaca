@@ -9,6 +9,8 @@ export default function hasRestriction (plate: Plate, date: Date, time: Date): b
   if (plate.restriction === null || plate.restriction === undefined) throw new Error('Plate restriction is required')
 
   const restriction = plate.restriction
+  const timeHours = time.getHours()
+  const timeMinutes = time.getMinutes()
 
   const restrictionDayNumber = fromDayToNumber(restriction.days)
 
@@ -19,8 +21,8 @@ export default function hasRestriction (plate: Plate, date: Date, time: Date): b
     const fromTime: Date = fromTimeToDate(from)
     const toTime: Date = fromTimeToDate(to)
 
-    if (time.getHours() < toTime.getHours() && time.getHours() > fromTime.getHours()) return true
-    if (time.getMinutes() < toTime.getMinutes() && time.getMinutes() > fromTime.getMinutes()) return true
+    if ((timeHours < toTime.getHours() && timeHours > fromTime.getHours())) return true
+    if ((timeHours === toTime.getHours() && timeMinutes <= toTime.getMinutes()) || (timeHours === fromTime.getHours() && timeMinutes >= fromTime.getMinutes())) return true
   }
 
   return false
