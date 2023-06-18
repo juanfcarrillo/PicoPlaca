@@ -1,7 +1,7 @@
 import PicoPlacaTime from './PicoPlacaTime'
 
 export const mornignRestrinction: PicoPlacaTime = {
-  from: { time: '07:00', period: 'am' },
+  from: { time: '7:00', period: 'am' },
   to: { time: '9:30', period: 'am' }
 }
 

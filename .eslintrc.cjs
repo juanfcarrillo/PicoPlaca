@@ -7,12 +7,13 @@ module.exports = {
     'plugin:react-hooks/recommended'
   ],
   parser: '@typescript-eslint/parser',
-  parserOptions: { ecmaVersion: 'latest', sourceType: 'module', project: './tsconfig.json' },
+  parserOptions: { ecmaVersion: 'latest', sourceType: 'module', project: './tsconfig.json', tsconfigRootDir: __dirname },
   plugins: ['react-refresh'],
   rules: {
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
     '@typescript-eslint/consistent-type-assertions': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off'
-  }
+  },
+  root: true,
 }
