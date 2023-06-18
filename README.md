@@ -1,8 +1,26 @@
-## Pico y Placa Predictor
+<br />
+<div align="center">
+  <a href="https://main--sprightly-cannoli-6efb02.netlify.app/>
+    <img src="docs/assets/pick.png" alt="Pico Y Placa Logo" width="80" height="80">
+  </a>
 
-The Pico y Placa predictor is a web application to know if a car has pico y placa at a certain time on a certain day in Quito.
+  <h3 align="center">Pico y Placa Predictor</h3>
 
-To know that, we have the next table:
+  <p align="center">
+    Pico y Placa predictor for Quito :3
+    <br />
+    <a href="https://main--sprightly-cannoli-6efb02.netlify.app/">View Demo</a>
+    ·
+  </p>
+</div>
+
+## About The Project
+
+[![Pico Y Placa][product-screenshot]](docs/assets/empty-app.png)
+
+The project is made to predict the traffic restrictions in Quito
+
+Days based Restrictions:
 
 | Dias      | Dígitos |
 | --------- | ------- |
@@ -12,4 +30,8 @@ To know that, we have the next table:
 | Jueves    | 7 y 8   |
 | Viernes   | 9 y 0   |
 
-![Empty app](docs/assets/empty-app.png)
+### Built With
+
+This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+
+- [![React][React.js]][React-url]
