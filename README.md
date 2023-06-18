@@ -38,7 +38,7 @@ Days based Restrictions:
 
 ### Built With
 
-- ![React](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+- ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 - ![Vite](https://img.shields.io/badge/vite-646cff?style=for-the-badge&logo=standardjs&logoColor=white)
 - ![Standard](https://img.shields.io/badge/standard-f3df49?style=for-the-badge&logo=standardjs&logoColor=white)
 - ![MUI](https://img.shields.io/badge/tailwindcss-06b6d4?style=for-the-badge&logo=standardjs&logoColor=white)
