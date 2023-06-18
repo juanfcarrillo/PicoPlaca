@@ -12,4 +12,4 @@ To know that, we have the next table:
 | Jueves    | 7 y 8   |
 | Viernes   | 9 y 0   |
 
-![Alt text](docs\assets\empty-app.png)
+![Empty app](docs/assets/empty-app.png)
