@@ -34,4 +34,7 @@ Days based Restrictions:
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-- [![React][React.js]][React-url]
+- [![React][https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white]][https://reactjs.org/]
+- [![Vite][https://img.shields.io/badge/vite-646cff?style=for-the-badge]][https://vitejs.dev/]
+- [![Standard][https://img.shields.io/badge/standard-f3df49?style=for-the-badge&logo=standardjs&logoColor=white]][https://github.com/standard/ts-standard]
+- [![MUI][https://img.shields.io/badge/tailwindcss-06b6d4?style=for-the-badge&logo=standardjs&logoColor=white]][https://tailwindcss.com/]
