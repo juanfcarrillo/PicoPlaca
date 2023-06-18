@@ -24,6 +24,8 @@ If the plate has restriction
 If the plate if free to go
 ![Restriction](docs/assets/without-restriction.png)
 
+The main logic of checking the plate restriction is a utility that help us to know if a plate can be driven that day
+
 The project is made to predict the traffic restrictions in Quito
 
 Days based Restrictions:

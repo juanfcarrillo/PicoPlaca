@@ -2,6 +2,7 @@ import fromDayToNumber from '../../adapter/Time/fromDayToNumber'
 import fromTimeToDate from '../../adapter/Time/fromTimeToDate'
 import Plate from '../../domain/Plate/Plate'
 
+// Main logic of the plate restriction
 // Checks the logic of the the plate restriction
 export default function hasRestriction (plate: Plate, date: Date, time: Date): boolean {
   // TODO: Add a better error handling
