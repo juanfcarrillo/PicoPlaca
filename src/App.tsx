@@ -2,6 +2,7 @@ import { Typography } from '@mui/material'
 import './App.css'
 import { PlateForm } from './components/PlateForm'
 import { AskImage } from './components/AskImage'
+import { Plate } from './components/Plate'
 
 function App () {
   return (
@@ -9,6 +10,7 @@ function App () {
       <Typography variant='h1' fontSize={30} fontWeight='bold' textAlign='center'>Consulta Pico y Placa</Typography>
       <AskImage />
       <PlateForm />
+      <Plate />
     </main>
   )
 }

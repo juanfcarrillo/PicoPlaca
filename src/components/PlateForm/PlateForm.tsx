@@ -11,7 +11,8 @@ import { RestrictionDialog } from '../RestrictionDialog'
 export interface PlateFormProps {}
 
 const PlateForm: React.FC<PlateFormProps> = () => {
-  const [plateIdentifier, setPlateIdentifier] = useState<string>('')
+  const plateIdentifier = useStorePlate(store => store.plateIndetifier)
+  const setPlateIdentifier = useStorePlate(store => store.setPlateIdentifier)
   const [openDialog, setOpenDialog] = useState<boolean>(false)
   const [date, setDate] = useState<Dayjs | null>(null)
   const [time, setTime] = useState<Dayjs | null>(null)
@@ -53,7 +54,7 @@ const PlateForm: React.FC<PlateFormProps> = () => {
       <DatePicker label='Fecha a circular' value={date} onChange={setDate} />
       <TimePicker label='Hora a circular' value={time} onChange={setTime} />
       <TextField label='Placa' placeholder='JD834G' value={plateIdentifier} onInput={(e: React.ChangeEvent<HTMLInputElement>) => setPlateIdentifier(e.target.value.toUpperCase())} />
-      <Button variant='contained' type='submit'>Ver horario</Button>
+      <Button variant='contained' type='submit'>Ver restricción</Button>
     </form>
   )
 }

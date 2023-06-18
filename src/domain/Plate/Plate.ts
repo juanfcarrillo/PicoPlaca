@@ -35,8 +35,8 @@ export function getLastDigit (identifier: string) {
 // Ensure the rules of the identifier
 // Format ABC1234 or ABC123
 function ensureFormatValidPlate (identifier: string) {
-  const carRegex = /^[A-Z]{3}[0-9]{3,4}$/
-  const bikeRegex = /^[A-Z]{2}[0-9]{3}[A-Z]$/
+  const carRegex = /^[A-Z]{3}-[0-9]{3,4}$/
+  const bikeRegex = /^[A-Z]{2}-[0-9]{3}[A-Z]$/
 
   if (!carRegex.test(identifier) && !bikeRegex.test(identifier)) throw new Error('Plate identifier is not valid')
 }
