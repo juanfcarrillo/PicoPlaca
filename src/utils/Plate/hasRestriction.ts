@@ -2,7 +2,9 @@ import fromDayToNumber from '../../adapter/Time/fromDayToNumber'
 import fromTimeToDate from '../../adapter/Time/fromTimeToDate'
 import Plate from '../../domain/Plate/Plate'
 
+// Checks the logic of the the plate restriction
 export default function hasRestriction (plate: Plate, date: Date, time: Date): boolean {
+  // TODO: Add a better error handling
   if (plate === null || plate === undefined) throw new Error('Plate is required')
   if (date === null || date === undefined) throw new Error('Date is required')
   if (time === null || time === undefined) throw new Error('Time is required')
@@ -16,6 +18,7 @@ export default function hasRestriction (plate: Plate, date: Date, time: Date): b
 
   if (restrictionDayNumber !== date.getDay()) return false
 
+  // Checks all the restriction time defined in the plate
   for (let i = 0; i < restriction.time.length; i++) {
     const { from, to } = restriction.time[i]
     const fromTime: Date = fromTimeToDate(from)

@@ -57,7 +57,6 @@ const PlateForm: React.FC<PlateFormProps> = () => {
 
   return (
     <form className='grid grid-cols-2 gap-4 max-w-lg' onSubmit={getPlateRestricion}>
-      {/* {openDialogError && <Alert severity='error'>La placa es erronea</Alert>} */}
       <RestrictionDialog open={openDialog} onClose={() => setOpenDialog(false)} hasRestriction={restriction} />
       <DatePicker label='Fecha a circular' value={date} onChange={setDate} />
       <TimePicker label='Hora a circular' value={time} onChange={setTime} />

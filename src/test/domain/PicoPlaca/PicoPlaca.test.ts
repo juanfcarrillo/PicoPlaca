@@ -1,6 +1,6 @@
 import { test, expect } from 'vitest'
-import { getPicoPlacaRestriction } from '../domain/PicoPlaca/PicoPlaca'
-import { Days } from '../domain/shared/Days'
+import { getPicoPlacaRestriction } from '../../../domain/PicoPlaca/PicoPlaca'
+import { Days } from '../../../domain/shared/Days'
 
 test('getPicoPlacaRestriction', () => {
   expect(getPicoPlacaRestriction(1)).toStrictEqual({

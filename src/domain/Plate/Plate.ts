@@ -15,12 +15,14 @@ export function ensureValidPlate (plate: Plate) {
   if (plate.identifier.length === 0) throw new Error('Plate identifier is required')
   if (Number.isNaN(plate.lastDigit)) throw new Error('Plate last digit is required')
 
-  ensureFormatValidPlate(plate.identifier)
+  ensureFormatValidPlateIdentifier(plate.identifier)
   ensureFormatValidLastDigit(plate.lastDigit)
 }
 
 // Obtain the last digit of the plate
 export function getLastDigit (identifier: string) {
+  ensureFormatValidPlateIdentifier(identifier)
+
   const lastStringDigit = identifier[identifier.length - 1]
 
   if (!isNaN(Number(lastStringDigit))) return Number(lastStringDigit)
@@ -34,7 +36,7 @@ export function getLastDigit (identifier: string) {
 
 // Ensure the rules of the identifier
 // Format ABC1234 or ABC123
-function ensureFormatValidPlate (identifier: string) {
+export function ensureFormatValidPlateIdentifier (identifier: string) {
   const carRegex = /^[A-Z]{3}-[0-9]{3,4}$/
   const bikeRegex = /^[A-Z]{2}-[0-9]{3}[A-Z]$/
 
