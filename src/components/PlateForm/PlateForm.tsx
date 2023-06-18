@@ -1,10 +1,11 @@
 import { Button, TextField } from '@mui/material'
-import React, { useState } from 'react'
-import useStorePlate from '../../store/plate/usePlateStore'
-import Plate, { ensureValidPlate, getLastDigit } from '../../domain/Plate/Plate'
-import { getPicoPlacaRestriction } from '../../domain/PicoPlaca/PicoPlaca'
 import { DatePicker, TimePicker } from '@mui/x-date-pickers'
 import { Dayjs } from 'dayjs'
+import React, { useState } from 'react'
+import { toast } from 'react-toastify'
+import { getPicoPlacaRestriction } from '../../domain/PicoPlaca/PicoPlaca'
+import Plate, { ensureValidPlate, getLastDigit } from '../../domain/Plate/Plate'
+import useStorePlate from '../../store/plate/usePlateStore'
 import hasRestriction from '../../utils/Plate/hasRestriction'
 import { RestrictionDialog } from '../RestrictionDialog'
 
@@ -17,6 +18,7 @@ const PlateForm: React.FC<PlateFormProps> = () => {
   const [date, setDate] = useState<Dayjs | null>(null)
   const [time, setTime] = useState<Dayjs | null>(null)
   const [restriction, setRestriction] = useState<boolean | undefined>()
+  const notify = () => toast.error('La placa es erronea')
 
   const setPlate = useStorePlate(store => store.setPlate)
 
@@ -32,7 +34,12 @@ const PlateForm: React.FC<PlateFormProps> = () => {
       restriction: plateRestriction
     }
 
-    ensureValidPlate(plate)
+    try {
+      ensureValidPlate(plate)
+    } catch (e) {
+      notify()
+      return
+    }
 
     checkPlateRestriction(plate)
     setOpenDialog(true)
@@ -50,6 +57,7 @@ const PlateForm: React.FC<PlateFormProps> = () => {
 
   return (
     <form className='grid grid-cols-2 gap-4 max-w-lg' onSubmit={getPlateRestricion}>
+      {/* {openDialogError && <Alert severity='error'>La placa es erronea</Alert>} */}
       <RestrictionDialog open={openDialog} onClose={() => setOpenDialog(false)} hasRestriction={restriction} />
       <DatePicker label='Fecha a circular' value={date} onChange={setDate} />
       <TimePicker label='Hora a circular' value={time} onChange={setTime} />
